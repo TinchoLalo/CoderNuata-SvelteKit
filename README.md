@@ -14,6 +14,9 @@ git clone https://github.com/TinchoLalo/CoderNuata-SvelteKit.git
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+npm install
+```
 
 ```bash
 npm run dev
