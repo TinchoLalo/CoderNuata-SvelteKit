@@ -8,7 +8,7 @@ Your first steps to travel through the code.
 
 ```bash
 # clone this repository
-git clone [`https://github.com/TinchoLalo/CoderNuata-SvelteKit.git`] 
+git clone https://github.com/TinchoLalo/CoderNuata-SvelteKit.git 
 ```
 
 ## Developing
