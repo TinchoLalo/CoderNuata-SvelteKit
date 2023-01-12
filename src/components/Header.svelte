@@ -5,11 +5,9 @@
 	import logo from '$lib/images/logoCoderNauta.svg';
 	import github from '$lib/images/github.svg';
 	import { count } from '../stores';
+
 	// FUNCTIONS
-	let id;
-	const unsubscribe = count.subscribe(value => {
-		id = value;
-	});
+
 
 
 </script>
@@ -33,8 +31,8 @@
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/travel/{id}">Travel</a>
+			<li aria-current={$page.url.pathname.startsWith('/travel') ? 'page' : undefined}>
+				<a href="/travel">Travel</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">

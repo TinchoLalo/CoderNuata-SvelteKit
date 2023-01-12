@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>CoderNauta SvelteKit | Travel</title>
+	<title>CoderNauta SvelteKit | My Number</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 

@@ -55,6 +55,9 @@
 	h1 {
 		width: 100%;
 	}
+	h2 {
+		margin: 0;
+	}
 
 
 	.welcome {

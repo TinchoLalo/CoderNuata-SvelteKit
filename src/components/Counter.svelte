@@ -2,15 +2,16 @@
 	import { spring } from 'svelte/motion';
 	import { count } from "../stores";
 
+	// FUNCTIONS
+	let countValue = count;
+	const unsubscribe = count.subscribe(value => {
+		countValue = value;
+	});
+
 	// Operations + and -
 	const increment = () => { count.update(n => n + 1);} 
     const decrement = () => { count.update(n => n - 1); }
 
-	// Save data in the store
-	let countValue;
-    const unsubscribe = count.subscribe(value => {
-		countValue = value;
-	});
 
 	// ANIMATION NUMBER
 	const displayed_count = spring();
@@ -32,12 +33,15 @@
 		</svg>
 	</button>
 
-	<div class="counter-viewport">
-		<div class="counter-digits" style="transform: translate(0, {100 * offset}%)">
-			<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</strong>
-			<strong>{Math.floor($displayed_count)}</strong>
+	<a href="/my-number/{countValue}">
+		<div class="counter-viewport">
+			<div class="counter-digits" style="transform: translate(0, {100 * offset}%)">
+				<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</strong>
+				<strong>{Math.floor($displayed_count)}</strong>
+			</div>
 		</div>
-	</div>
+	</a>
+	
 
 	<button on:click={increment} aria-label="Increase the counter by one">
 		<svg aria-hidden="true" viewBox="0 0 1 1">
@@ -45,6 +49,7 @@
 		</svg>
 	</button>
 </div>
+<p>Click Number!</p>
 
 <style>
 	.counter {
@@ -81,12 +86,18 @@
 		stroke: #444;
 	}
 
+	p {
+		margin-top: -1rem;
+		color: rgb(152, 152, 152);
+	}
+
 	.counter-viewport {
 		width: 8em;
 		height: 4em;
 		overflow: hidden;
 		text-align: center;
 		position: relative;
+		cursor: pointer;
 	}
 
 	.counter-viewport strong {
